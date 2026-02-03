@@ -1,0 +1,45 @@
+; fail_all.as — intentionally broken assembly with many different errors
+
+.entry MISSING                 
+.entry DUP
+.extern EXT
+.extern EXT                    
+.extern DATA_LABEL             
+
+MAIN:   mov #1, #2             
+        inc #5                 
+        jmp r3                 
+        mov M[r1][r2, r3       
+1BAD:   add r0, r1             
+A:      sub r1 r2              
+A:      prn rx                 
+        mov r8, r0             
+        mov r1, #999999999     
+        bne UNDEF              
+        prn "hi               
+        stop r1               
+
+STR1:   .string abcdef         
+STR2:   .string "unterminated  
+NUMS1:  .data 1 2,3            
+NUMS2:  .data ,1,,2,           
+NUMS3:  .data 5, -, 7          
+NUMS4:  .data                  
+
+MAT1:   .mat [2][2] 1,2,3      
+MAT2:   .mat [2]2] 1,2,3,4     
+MAT3:   .mat [2][2] 1,2,3,4,5  
+
+EXT:    .data 1                
+DUP:    .data 0
+DUP:    .data 1                
+
+        .data 1,2,3 extra      
+
+BADOP:  movv r1, r2          
+
+
+        mov M2[r1][], r3      
+        mov M3[r1][r9], r0     
+
+

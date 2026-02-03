@@ -1,0 +1,18 @@
+# Build outputs
+*.o
+*.obj
+*.exe
+
+# Assembler outputs
+*.ob
+*.ent
+*.ext
+
+# Temporary / misc
+*.am~
+*.tmp
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

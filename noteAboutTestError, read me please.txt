@@ -1,0 +1,6 @@
+after testing my project , run the booklet test in the Assembler , comparing test outputs , one differences found:
+1- line bcdb (Encode of the inst: prn #-5 (line 8 in .am file ))
+ my result =      dbaaa = 1101-00-00-00 (opcode of prn inst is 13 = 1101)
+ booklet result = daaaa = 1100-00-00-00 (means opcode is 12 which the opcode if red inst )
+
+* not : the opcode table in this Assembler based on page 35 in course booklet
