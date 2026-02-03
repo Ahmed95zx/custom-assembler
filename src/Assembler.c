@@ -56,9 +56,9 @@ int main(int argc, char** argv){
         /* Check for errors during compilation, if found clean all resources */
         if (Error) {
             fprintf(stderr, "Failed to Compile File %s\n", file_name);
-            memset(Code, 0, MAX_LENGTH);
-            memset(Data, 0, MAX_LENGTH);
-            memset(PC, 0, 2);
+            memset(Code, 0, sizeof(Code));
+            memset(Data, 0, sizeof(Data));
+            memset(PC, 0, sizeof(PC));
             freeLabelTable(table);
             free(file_name);
             Error = 0;
@@ -72,9 +72,9 @@ int main(int argc, char** argv){
         Write_extern_entry_files(table, file_name);
         
         /* Cleanup: reset arrays and free allocated memory */
-        memset(Code, 0, MAX_LENGTH);
-        memset(Data, 0, MAX_LENGTH);
-        memset(PC, 0, 2);
+        memset(Code, 0, sizeof(Code));
+        memset(Data, 0, sizeof(Data));
+        memset(PC, 0, sizeof(PC));
         freeLabelTable(table);
         free(file_name);
         Error = 0;
