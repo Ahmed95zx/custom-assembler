@@ -22,6 +22,8 @@ Includes macro processing, symbol management, and detailed error handling.
 
 \- Clear syntax + semantic error reporting
 
+\- Tested using multiple assembly input cases, including valid programs and error scenarios
+
 
 
 \## Project Structure
@@ -56,8 +58,15 @@ make
 
 
 
-RUN: 
-./Assembler fileName1.as fileName2.as
+## Run
+```bash
+./Assembler test1.as test2.as
 
 
+
+```md
+## Motivation
+This project was developed to practice systems-level programming concepts,
+including multi-pass processing, memory management, and robust error handling.
+It reflects real-world tooling patterns commonly found in compilers and build systems.
 
